@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 1 - Lý Thuyết & Bài Tập C++</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>C++ Learning Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="chapter1.html">Chương Học Phần</a></li>
+                <li><a href="practice.html">Thực Hành & Chấm Điểm</a></li>
+                <li><a href="profile.html">Thông Tin Cá Nhân</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Chương 1: Tổng Quan & Cấu Trúc Cơ Bản C++</h2>
+        
+        <h3>1. Lý thuyết trọng tâm</h3>
+        <p>Cấu trúc một chương trình C++ cơ bản bao gồm khai báo thư viện <code>#include &lt;iostream&gt;</code>, hàm <code>main()</code> là điểm khởi đầu của chương trình, và lệnh <code>std::cout</code> để xuất dữ liệu ra màn hình.</p>
+
+        <h3>2. Danh sách Bài tập (Từ dễ đến khó)</h3>
+        
+        <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
+            <h4>Bài 1 (Dễ): In câu chào "Hello World"</h4>
+            <p>Viết chương trình C++ in ra màn hình dòng chữ "Hello World!".</p>
+            <details>
+                <summary style="cursor:pointer; color:var(--secondary-color); font-weight:bold;">Xem lời giải</summary>
+                <pre style="background:#eee; padding:10px; margin-top:5px; border-radius:4px;">
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    cout << "Hello World!";
+    return 0;
+}</pre>
+            </details>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <h4>Bài 2 (Trung bình): Tính tổng hai số nguyên</h4>
+            <p>Nhập vào từ bàn phím hai số nguyên a và b, tính và in ra tổng của chúng.</p>
+            <details>
+                <summary style="cursor:pointer; color:var(--secondary-color); font-weight:bold;">Xem lời giải</summary>
+                <pre style="background:#eee; padding:10px; margin-top:5px; border-radius:4px;">
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int a, b;
+    cin >> a >> b;
+    cout << "Tong = " << a + b;
+    return 0;
+}</pre>
+            </details>
+        </div>
+
+        <a href="practice.html" class="btn">Chuyển đến phần thực hành</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - C++ Learning Hub</p>
+    </footer>
+</body>
+</html>

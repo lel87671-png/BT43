@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần Thực Hành & Chấm Điểm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>C++ Learning Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="chapter1.html">Chương Học Phần</a></li>
+                <li><a href="practice.html">Thực Hành & Chấm Điểm</a></li>
+                <li><a href="profile.html">Thông Tin Cá Nhân</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Phòng Thực Hành Lập Trình C++</h2>
+        <form id="practiceForm">
+            <div class="form-group">
+                <label for="studentId">Mã Sinh Viên (MSV):</label>
+                <input type="text" id="studentId" required placeholder="Nhập mã sinh viên của bạn...">
+            </div>
+
+            <div class="form-group">
+                <label for="exerciseSelect">Chọn Bài Tập:</label>
+                <select id="exerciseSelect">
+                    <option value="ex1">Bài 1: In Hello World (Dễ)</option>
+                    <option value="ex2">Bài 2: Tính tổng hai số nguyên (Trung bình)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="codeSolution">Nhập Lời Giải (Mã nguồn C++):</label>
+                <textarea id="codeSolution" placeholder="// Nhập code C++ của bạn vào đây..."></textarea>
+            </div>
+
+            <button type="submit" class="btn">Nộp Bài & Nhận Điểm</button>
+        </form>
+
+        <div id="resultBox" class="result-box">
+            <h3>Kết quả chấm bài</h3>
+            <p id="resultText"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('practiceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const msv = document.getElementById('studentId').value.trim();
+            const code = document.getElementById('codeSolution').value.trim();
+            const resultBox = document.getElementById('resultBox');
+            const resultText = document.getElementById('resultText');
+
+            if (!msv) {
+                alert('Vui lòng nhập Mã sinh viên!');
+                return;
+            }
+            if (!code) {
+                alert('Vui lòng nhập lời giải!');
+                return;
+            }
+
+            // Giả lập hệ thống chấm điểm tự động dựa trên độ dài hoặc từ khóa cơ bản
+            let score = 0;
+            if (code.includes('int main') && (code.includes('cout') || code.includes('cin'))) {
+                score = 10;
+            } else if (code.length > 10) {
+                score = 6;
+            } else {
+                score = 3;
+            }
+
+            resultBox.style.display = 'block';
+            resultText.innerHTML = `<strong>Mã sinh viên:</strong> ${msv}<br>
+                                    <strong>Trạng thái:</strong> Đã chấm bài thành công!<br>
+                                    <strong>Điểm số đạt được:</strong> <span style="color: #e74c3c; font-size: 1.2rem; font-weight: bold;">${score}/10 điểm</span>`;
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2026 - C++ Learning Hub</p>
+    </footer>
+</body>
+</html>
